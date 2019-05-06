@@ -31,3 +31,6 @@ def test_is_misspelling():
     ans = Answer('Minnie Driver')
     assert ans.is_misspelling('Minny Driver')
 
+    ans = Answer('Joaquin Phoenix')
+    assert ans.is_misspelling('Joakin Pheonix')
+

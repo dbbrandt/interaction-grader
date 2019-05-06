@@ -118,14 +118,21 @@ class Answer():
             i = 0
             misspelling = ''
             while i < len(test):
-                new_phoneme, match_length = Phonemes().random_swap(test[i:])
-                if match_length > 0:
-                    test_spelling = misspelling[0:i]
-                    test_spelling += new_phoneme
-                    test_spelling += test[i+match_length:]
-                    score = fuzz.ratio(test_spelling, target) / 100
+                alt_list = Phonemes().swap_list(test[i:])
+                # Test if changing the current phoneme with an alternative passes the minimum fuzz score
+                # TODO test with a wider variety of real world misspelling to fine tune this to find more
+                for alt in alt_list:
+                    alt_phoneme = alt[0]
+                    alt_length = alt[1]
+                    if alt_length > 0:
+                        test_spelling = misspelling[0:i]
+                        test_spelling += alt_phoneme
+                        test_spelling += test[i+alt_length:]
+                        score = fuzz.ratio(test_spelling, target) / 100
                     if score > self.minimum_fuzzy_score:
                         break
+                if score > self.minimum_fuzzy_score:
+                    break
                 misspelling += test[i]
                 i += 1
 
