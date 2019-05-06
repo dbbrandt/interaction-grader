@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="interactiongrader",
-    version="0.0.4",
+    version="0.0.5",
     author="Daniel Brandt",
     author_email="dbbrandt@gmail.com",
     description="Grade free form text answers",
