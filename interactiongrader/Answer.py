@@ -1,4 +1,3 @@
-from enum import Enum
 from fuzzywuzzy import fuzz
 from .Phonemes import Phonemes
 import numpy as np
