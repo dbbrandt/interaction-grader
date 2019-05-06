@@ -12,3 +12,11 @@ ans = Answer('Joaquim Phoenix')
 if ans.is_misspelling('Joakim Pheonix'):  
     print('Correct Answer')  
 ```
+
+Package Dependencies:  
+- fuzzywuzzy  
+- python-Levenshtein  
+- numpy
+- pandas  
+- random  
+- enum  
