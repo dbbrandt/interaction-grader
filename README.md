@@ -12,11 +12,10 @@ ans = Answer('Joaquim Phoenix')
 if ans.is_misspelling('Joakim Pheonix'):  
     print('Correct Answer')  
 ```
+An sample script is in example.py.
 
-Package Dependencies:  
-- fuzzywuzzy  
-- python-Levenshtein  
-- numpy
-- pandas  
-- random  
-- enum  
+python interactiongrader/example.py
+
+Package Dependencies: See requirments.txt
+
+pip install -r requirements.txt
